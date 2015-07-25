@@ -1,0 +1,21 @@
+<h1>Articles Search</h1>
+
+<%= form_for search_path, method: :get do |f| %>
+  <p>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Go", name: nil %>
+  </p>
+<% end %>
+
+<% @snippets.each do |s| %>
+  <div class="file-holder">
+    <div class="file-title">
+      <i class="fa fa-code"></i>
+    </div>
+    <div class="file-content code">
+      <%= render 'share/file_highlight', blob: s %>
+    </div>
+
+  </div>
+<% end %>

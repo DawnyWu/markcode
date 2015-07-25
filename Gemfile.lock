@@ -67,6 +67,19 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    elasticsearch (1.0.4)
+      elasticsearch-api (= 1.0.4)
+      elasticsearch-transport (= 1.0.4)
+    elasticsearch-api (1.0.4)
+      multi_json
+    elasticsearch-model (0.1.4)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.4)
+    elasticsearch-transport (1.0.4)
+      faraday
+      multi_json
     erubis (2.7.0)
     escape_utils (1.1.0)
     execjs (2.5.2)
@@ -229,6 +242,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  elasticsearch-model
+  elasticsearch-rails
   figaro
   font-awesome-rails
   github-linguist
