@@ -1,0 +1,18 @@
+/*
+ *= require_self
+ */
+
+// @import "bootstrap/tables";
+// @import "base/mixins";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "base/variables";
+@import "highlight/*";
+@import "generic/buttons";
+@import "generic/files";
+@import "generic/highlight";
+@import "font-awesome";
+
+#editor {
+  height: 1000px;
+}

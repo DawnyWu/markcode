@@ -1,0 +1,10 @@
+.file-content.code.white
+  .line-numbers
+    - if blob.data.present?
+      - blob.data.lines.each_index do |index|
+        - offset = defined?(first_line_number) ? first_line_number : 1
+        - i = index + offset
+        %a{href: "#L#{i}", id: "L#{i}", 'data-line-number' => i}
+          = i
+  :preserve
+    #{highlight(blob.name, blob.data)}

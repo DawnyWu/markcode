@@ -1,4 +1,12 @@
 - @snippets.each do |s|
-	= s.name
-	=raw s.content
-	hr
+  .file-holder
+    .file-title
+      i.fa.fa-file
+      .file-actions
+        .btn-group
+          = link_to "edit", "#", class: "btn btn-default", title: 'Edit Snippet'
+          = link_to "raw", "#", class: "btn btn-default", title: 'Edit Snippet'
+          = link_to "edit", "#", class: "btn btn-default", title: 'Edit Snippet'
+          = link_to "remove", "#", class: "btn btn-danger", title: 'Edit Snippet'
+    .file-content.code
+    	= render 'share/file_highlight', blob: s
