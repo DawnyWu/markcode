@@ -1,0 +1,16 @@
+.snippet-form-holder
+  = form_for @snippet, url: snippets_path, html: { class: "form-horizontal snippet-form" } do |f|
+    .file-editor
+      .form-group
+        .col-sm-10
+          .file-holder.snippet
+            .file-title
+              = f.text_field :description, placeholder: "Description", class: 'form-control snippet-file-description'
+            .file-name-title
+              = f.text_field :name , placeholder: "Filename including extention ", class: 'form-control snippet-file-name'
+            .file-content.code
+              pre#editor= @snippet.content
+              = f.hidden_field :content, class: 'snippet-file-content'
+
+      .form-actions
+          = f.submit 'Create snippet', class: "btn-create btn"

@@ -11,6 +11,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
+    binding.pry
     Snippet.create(snippet_params)
     redirect_to snippets_path
    #  params[:snippet][:content] = params[:snippet][:content].gsub "\n","\r\n"
@@ -26,6 +27,7 @@ class SnippetsController < ApplicationController
   end
 
   def show
+    @snippet = Snippet.find(params[:id])
   end
 
   def edit
@@ -37,6 +39,6 @@ class SnippetsController < ApplicationController
   private
 
   def snippet_params
-    params.require(:snippet).permit(:content)
+    params.require(:snippet).permit(:content, :description, :name)
   end
 end
