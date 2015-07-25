@@ -1,4 +1,6 @@
+- if current_user
+  = current_user.name
+  = link_to "注销", destroy_user_session_path, method: :delete
 input type="button" id="submit" value="submit"
-hr
 pre#editor
 
