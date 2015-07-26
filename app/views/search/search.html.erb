@@ -19,3 +19,12 @@
 
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $("#q").autocomplete({
+    source: "/search",
+    select: function(event, ui) {
+      location.href = ui.item.url;
+    }
+  })
+</script>
