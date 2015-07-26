@@ -14,7 +14,8 @@
   }
 
   &.btn-remove {
-    @extend .btn-danger;
+    // @extend .btn-danger;
+    color: rgb(210,67,67);
   }
 
   &.btn-cancel {

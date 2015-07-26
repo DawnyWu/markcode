@@ -1,5 +1,6 @@
 /*
  *= require jquery-ui
+ *= require normalize-rails
  *= require pygments
  *= require_self
  */
@@ -16,6 +17,23 @@
 @import "font-awesome";
 @import "snippet";
 
+#q {
+  width: 220px;
+  background-image: image-url("icon-search.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  // height: inherit;
+  // padding: 4px 6px;
+  padding-left: 25px;
+  // font-size: 13px;
+  // background-color: #f5f5f5;
+  // border-color: #f5f5f5;
+}
+
 #editor {
   height: 1000px;
+}
+
+.fa.fa-code {
+  margin-right: 7px;
 }

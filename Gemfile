@@ -37,8 +37,8 @@ group :development do
   gem 'mina'
 end
 
-gem 'rouge'
 gem 'html-pipeline'
 gem 'github-linguist'
 gem 'github-markdown'
 gem 'pygments.rb'
+gem 'normalize-rails'

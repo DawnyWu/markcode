@@ -1,5 +1,5 @@
 class SnippetsController < ApplicationController
-  before_action :find_snippet, only: [:show, :edit, :update, :raw]
+  before_action :find_snippet, only: [:show, :edit, :update, :raw, :destroy]
 
 	def index
 	  @snippets = Snippet.all
@@ -37,6 +37,10 @@ class SnippetsController < ApplicationController
     )
   end
 
+  def destroy
+    Snippet.destroy(@snippet)
+    redirect_to snippets_path
+  end
   private
 
   def snippet_params
