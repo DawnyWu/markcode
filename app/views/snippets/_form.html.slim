@@ -1,5 +1,5 @@
 .snippet-form-holder
-  = form_for @snippet, url: snippets_path, html: { class: "form-horizontal snippet-form" } do |f|
+  = form_for @snippet, url: url, html: { class: "form-horizontal snippet-form" } do |f|
     .file-editor
       .form-group
         .col-sm-10
@@ -12,5 +12,14 @@
               pre#editor= @snippet.content
               = f.hidden_field :content, class: 'snippet-file-content'
 
-      .form-actions
-          = f.submit 'Create snippet', class: "btn-create btn"
+    .form-actions
+      - if @snippet.new_record?
+        = f.submit 'Create snippet', class: "btn-create btn"
+      - else
+        = f.submit 'Save', class: "btn-save btn"
+
+javascript:
+  var editor = ace.edit("editor");
+  $(".snippet-form-holder form").submit(function(){
+    $(".snippet-file-content").val(editor.getValue());
+  });

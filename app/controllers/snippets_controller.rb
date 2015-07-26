@@ -1,13 +1,12 @@
 class SnippetsController < ApplicationController
+  before_action :find_snippet, only: [:show, :eidt, :update]
+
 	def index
 		@snippets = Snippet.all
 	end
 
   def new
   	@snippet = Snippet.new
-  end
-
-  def preview
   end
 
   def create
@@ -26,18 +25,23 @@ class SnippetsController < ApplicationController
   end
 
   def show
-    @snippet = Snippet.find(params[:id])
   end
 
   def edit
   end
 
   def update
+    @snippet.update(snippet_params)
+    redirect_to snippets_path
   end
 
   private
 
   def snippet_params
     params.require(:snippet).permit(:content, :description, :name)
+  end
+
+  def find_snippet
+    @snippet = Snippet.find(params[:id])
   end
 end
