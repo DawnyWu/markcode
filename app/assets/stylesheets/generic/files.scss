@@ -61,6 +61,12 @@
 
         > pre {
           margin: 0;
+          padding-bottom: 0px;
+          padding-top: 22px;
+
+          span:first-of-type {
+            padding-left: 14px;
+          }
         }
       }
     }

@@ -1,0 +1,10 @@
+- unless snippet.content.empty?
+  - if markup?(snippet.name)
+    .file-content.wiki
+      =raw md_to_html(snippet.content)
+  - else
+    .file-content.code
+      = render 'shared/file_highlight', blob: snippet
+- else
+  .file-content.code
+    .nothing-here-block Empty file

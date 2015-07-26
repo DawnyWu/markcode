@@ -23,8 +23,11 @@ gem "rugments", "~> 1.0.0.beta8"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+
 group :development, :test do
   gem 'byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'web-console', '~> 2.0'
   gem 'spring', '~> 1.3.6'
   gem 'quiet_assets'
@@ -34,6 +37,7 @@ group :development do
   gem 'mina'
 end
 
+gem 'rouge'
 gem 'html-pipeline'
 gem 'github-linguist'
 gem 'github-markdown'

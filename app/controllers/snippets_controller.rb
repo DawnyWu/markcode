@@ -1,5 +1,5 @@
 class SnippetsController < ApplicationController
-  before_action :find_snippet, only: [:show, :eidt, :update]
+  before_action :find_snippet, only: [:show, :edit, :update]
 
 	def index
 		@snippets = Snippet.all
@@ -12,7 +12,7 @@ class SnippetsController < ApplicationController
   def create
     Snippet.create(snippet_params)
     redirect_to snippets_path
-   #  params[:snippet][:content] = params[:snippet][:content].gsub "\n","\r\n"
+
   	# pipeline = HTML::Pipeline.new [
 		 #  HTML::Pipeline::MarkdownFilter,
 		 #  HTML::Pipeline::SyntaxHighlightFilter
