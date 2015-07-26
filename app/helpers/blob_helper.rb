@@ -9,7 +9,7 @@ module BlobHelper
 
     begin
       # @lexer ||= Rugments::Lexer.guess(filename: blob_name, source: blob_content).new
-      @lexer ||= Rugments::Lexer.guess(filename: "hello.rb", source: blob_content).new
+      @lexer = Rugments::Lexer.guess(filename: blob_name).new
       result = @formatter.format(@lexer.lex(blob_content, continue: continue)).html_safe
     rescue
       lexer = Rugments::Lexers::PlainText

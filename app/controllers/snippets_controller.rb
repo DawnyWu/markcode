@@ -11,7 +11,6 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    binding.pry
     Snippet.create(snippet_params)
     redirect_to snippets_path
    #  params[:snippet][:content] = params[:snippet][:content].gsub "\n","\r\n"

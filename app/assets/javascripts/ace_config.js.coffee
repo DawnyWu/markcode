@@ -5,7 +5,7 @@ $(document).ready ->
     $(".snippet-file-content").val(editor.getValue())
 
   editor.setTheme("ace/theme/chrome")
-  editor.getSession().setMode("ace/mode/javascript")
+  editor.getSession().setMode("ace/mode/ruby")
   editor.resize()
   editor.setHighlightActiveLine(true)
   editor.insert("# hello\n ## world");
