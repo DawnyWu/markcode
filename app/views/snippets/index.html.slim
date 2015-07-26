@@ -1,13 +1,2 @@
 - @snippets.each do |s|
-  .file-holder
-    .file-title
-      i.fa.fa-code
-      = s.name
-      .file-actions
-        .btn-group
-          = link_to "edit", edit_snippet_path(s), class: "btn btn-default", title: 'Edit Snippet'
-          = link_to "raw", "#", class: "btn btn-default", title: 'Edit Snippet'
-          = link_to "edit", "#", class: "btn btn-default", title: 'Edit Snippet'
-          = link_to "remove", "#", class: "btn", title: 'Edit Snippet'
-    .file-content.code
-    	= render 'shared/blob', snippet: s
+  = render "shared/snippet", snippet: s

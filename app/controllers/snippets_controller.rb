@@ -1,8 +1,8 @@
 class SnippetsController < ApplicationController
-  before_action :find_snippet, only: [:show, :edit, :update]
+  before_action :find_snippet, only: [:show, :edit, :update, :raw]
 
 	def index
-		@snippets = Snippet.all
+	  @snippets = Snippet.all
 	end
 
   def new
@@ -10,18 +10,8 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    Snippet.create(snippet_params)
-    redirect_to snippets_path
-
-  	# pipeline = HTML::Pipeline.new [
-		 #  HTML::Pipeline::MarkdownFilter,
-		 #  HTML::Pipeline::SyntaxHighlightFilter
-   #  ]
-  	# content = params[:snippet][:content]
-  	# result = pipeline.call(content)
-  	# Snippet.create(name: params[:snippet][:name], content: result[:output].to_s)
-   #  binding.pry
-  	# redirect_to snippets_path
+    snippet = Snippet.create(snippet_params)
+    redirect_to snippet_path(snippet)
   end
 
   def show
@@ -31,8 +21,20 @@ class SnippetsController < ApplicationController
   end
 
   def update
-    @snippet.update(snippet_params)
-    redirect_to snippets_path
+    if @snippet.update(snippet_params)
+      redirect_to snippet_path(@snippet)
+    else
+      render action: :edit
+    end
+  end
+
+  def raw
+    send_data(
+      @snippet.content,
+      type: 'text/plain; charset=utf-8',
+      disposition: 'inline',
+      filename: @snippet.sanitized_file_name
+    )
   end
 
   private

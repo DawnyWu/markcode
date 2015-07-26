@@ -9,6 +9,14 @@ class Snippet < ActiveRecord::Base
   def data
     content
   end
+
+  def file_name
+    name
+  end
+
+  def sanitized_file_name
+    name.gsub(/[^a-zA-Z0-9_\-\.]+/, '')
+  end
 end
 
 # Delete the previous articles index in Elasticsearch

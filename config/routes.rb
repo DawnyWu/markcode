@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   get 'search' => 'search#search', as: :search
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :snippets
 
-  get 'home/index'
-  # get "/auth/github/callback" => "users#login_with_providers"
+  resources :snippets do
+    member do
+      get 'raw'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
