@@ -24,6 +24,7 @@ gem "rugments", "~> 1.0.0.beta8"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'unicorn'
+gem "skylight"
 
 group :development, :test do
   gem 'byebug'
