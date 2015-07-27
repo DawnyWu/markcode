@@ -14,4 +14,12 @@ namespace :setup do
       upload! StringIO.new(File.read("config/secrets.yml")), "#{shared_path}/config/secrets.yml"
     end
   end
+
+  desc "Upload application.yml file"
+  task :upload_application_yml do
+    on roles(:app) do
+      execute "mkdir -p #{shared_path}/config"
+      upload! StringIO.new(File.read("config/application.yml")), "#{shared_path}/config/application.yml"
+    end
+  end
 end
