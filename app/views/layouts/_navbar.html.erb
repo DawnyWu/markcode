@@ -13,11 +13,6 @@
               <%= text_field_tag :q, params[:q], class: "form-control" %>
             </div>
           <% end %>
-        <%#= form_tag '/search', method: :get, class: "navbar-form", role: "search" do %>
-          <!-- <div class="form-group"> -->
-            <!-- <input type="text" name="search" class="form-control" placeholder="搜索标题"> -->
-          <!-- </div> -->
-        <%# end %>
         </li>
         <% if user_signed_in? %>
           <li class="dropdown">
@@ -30,7 +25,7 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "用户登陆", new_user_session_path %></a></li>
+          <li><%= link_to "用户登陆", new_user_session_path %></li>
         <% end %>
       </ul>
 

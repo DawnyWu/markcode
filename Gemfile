@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'slim'
 gem 'pry'
+gem 'mysql2'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
@@ -22,7 +23,7 @@ gem 'haml'
 gem "rugments", "~> 1.0.0.beta8"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-
+gem 'unicorn'
 
 group :development, :test do
   gem 'byebug'
@@ -34,7 +35,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'mina'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-unicorn', :require => false
 end
 
 gem 'html-pipeline'
