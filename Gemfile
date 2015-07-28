@@ -23,8 +23,6 @@ gem 'haml'
 gem "rugments", "~> 1.0.0.beta8"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'unicorn'
-gem "skylight"
 
 group :development, :test do
   gem 'byebug'
@@ -41,6 +39,13 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-unicorn', :require => false
+end
+
+group :production do
+  gem 'unicron'
+  gem 'unicorn-worker-killer'
+  gem 'newrelic_rpm'
+  gem "skylight"
 end
 
 gem 'html-pipeline'
