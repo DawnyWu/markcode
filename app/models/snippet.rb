@@ -4,6 +4,8 @@ class Snippet < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
+  belongs_to :author, class_name: 'User'
+
   validates :name, :description, :content, presence: true
 
   def data

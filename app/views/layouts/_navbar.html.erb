@@ -1,7 +1,9 @@
 <nav id="workflowNavbar" class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a id="logo" class="navbar-brand" href="/" title="" alt="">Markcode</a>
+      <%= link_to new_snippet_path, id: "logo", class: "navbar-brand" do %>
+        Markcode
+      <% end %>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">

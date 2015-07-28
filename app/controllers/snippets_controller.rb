@@ -1,8 +1,9 @@
 class SnippetsController < ApplicationController
   before_action :find_snippet, only: [:show, :edit, :update, :raw, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
 	def index
-	  @snippets = Snippet.all
+	  @snippets = current_user.snippets
 	end
 
   def new
@@ -10,7 +11,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    snippet = Snippet.create(snippet_params)
+    snippet = current_user.snippets.create(snippet_params)
     redirect_to snippet_path(snippet)
   end
 

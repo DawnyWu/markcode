@@ -12,11 +12,11 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails'
-gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
@@ -48,6 +48,7 @@ group :production do
   gem "skylight"
 end
 
+gem 'redis-rails'
 gem 'html-pipeline'
 gem 'github-linguist'
 gem 'github-markdown'

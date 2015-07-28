@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery-ui
 //= require ace/ace
-//= require ace_config
 //= require ace/mode-ruby
 //= require ace/theme-chrome
 //= require ace/keybinding-vim
