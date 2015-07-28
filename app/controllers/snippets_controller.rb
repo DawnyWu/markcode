@@ -1,6 +1,6 @@
 class SnippetsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create, :edit, :update, :destroy]
   before_action :find_snippet, only: [:show, :edit, :update, :raw, :destroy]
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
 	def index
 	  @snippets = current_user.snippets
