@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery-ui
-//= require ace
+//= require ace/ace
 //= require ace_config
-//= require_tree .
+//= require ace/mode-ruby
+//= require ace/theme-chrome
+//= require ace/keybinding-vim
