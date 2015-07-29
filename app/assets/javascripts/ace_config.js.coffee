@@ -1,6 +1,4 @@
-# $(document).ready ->
-console.log "hello"
-$(document).on 'page:change', ->
+$(document).on 'ready', ->
   editor = ace.edit("editor")
   console.log "change"
   $(document).on 'input', '#snippet_name', ->
@@ -12,7 +10,8 @@ $(document).on 'page:change', ->
   modelist = ace.require("ace/ext/modelist")
   editor = ace.edit("editor")
   editor.setTheme("ace/theme/chrome")
-  editor.getSession().setMode('ace/mode/ruby')
+  # editor.setTheme("ace/theme/github")
+  editor.getSession().setMode('ace/mode/text')
   editor.resize()
   editor.autoIndent = true
   editor.setHighlightActiveLine(true)

@@ -7,7 +7,7 @@
       = snippet.name
     .file-actions
       .btn-group
-        = link_to "edit", edit_snippet_path(snippet), class: "btn btn-default", title: 'Edit Snippet'
+        = link_to "edit", edit_snippet_path(snippet), class: "btn btn-default", data: { no_turbolink: true }, title: 'Edit Snippet'
         = link_to "raw", raw_snippet_path(snippet), class: "btn btn-default", title: 'Raw Snippet'
         = link_to "remove", snippet_path(snippet), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-remove", title: 'Edit Snippet'
   .file-content.code
