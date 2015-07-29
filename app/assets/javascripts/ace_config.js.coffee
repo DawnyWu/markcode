@@ -1,15 +1,20 @@
-$(document).ready ->
-  # file_name = "ruby.rb"
-  # $(document).on 'input', '#snippet_name', ->
-  #   file_name = $("#snippet_name").val()
-  #   mode = modelist.getModeForPath(file_name).mode
-  #   editor.getSession().setMode(mode)
-
+# $(document).ready ->
+console.log "hello"
+$(document).on 'page:change', ->
+  editor = ace.edit("editor")
+  console.log "change"
+  $(document).on 'input', '#snippet_name', ->
+    file_name = $("#snippet_name").val()
+    console.log file_name
+    mode = modelist.getModeForPath(file_name).mode
+    console.log mode
+    editor.getSession().setMode(mode)
   modelist = ace.require("ace/ext/modelist")
   editor = ace.edit("editor")
   editor.setTheme("ace/theme/chrome")
-  editor.getSession().setMode('ace/mode/text')
+  editor.getSession().setMode('ace/mode/ruby')
   editor.resize()
+  editor.autoIndent = true
   editor.setHighlightActiveLine(true)
   editor.setKeyboardHandler("ace/keyboard/vim");
   editor.getSession().setTabSize(2)
