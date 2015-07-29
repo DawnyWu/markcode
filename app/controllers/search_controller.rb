@@ -1,21 +1,11 @@
 class SearchController < ApplicationController
+
   def search
     params[:q] = params[:term] if params[:term].present?
-    if params[:q].nil?
-      @snippets = []
-    else
-      @snippets = Snippet.search(params[:q]).records
-    end
 
-    descriptions_array = []
+    @snippets = params[:q].nil? ? [] : current_user.snippets.where('description LIKE ?', "%#{params[:q]}%")
 
-    if @snippets.present?
-      snippets = @snippets[0..4]
-
-      snippets.each do |s|
-        descriptions_array << {label: s.description, url: "/snippets/#{s.id}"}
-      end
-    end
+    descriptions_array = result_to_array(@snippets)
 
     respond_to do |format|
       format.html
@@ -23,25 +13,19 @@ class SearchController < ApplicationController
     end
   end
 
-  def self.search(query)
-    __elasticsearch__.search(
-      {
-        query: {
-          multi_match: {
-            query: query,
-            fields: ['name^10', 'description', 'content']
-          }
-        },
-        highlight: {
-          pre_tags: ['<em>'],
-          post_tags: ['</em>'],
-          fields: {
-            name: {},
-            description: {},
-            content: {}
-          }
-        }
-      }
-    )
+  private
+
+  def result_to_array(snippets)
+    descriptions_array = []
+
+    if snippets.present?
+      snippets = @snippets[0..4]
+
+      snippets.each do |s|
+        descriptions_array << {label: s.description, url: "/snippets/#{s.id}"}
+      end
+    end
+
+    descriptions_array
   end
 end

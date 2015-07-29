@@ -42,6 +42,14 @@ class SnippetsController < ApplicationController
     Snippet.destroy(@snippet)
     redirect_to snippets_path
   end
+
+  def mode
+    binding.pry
+    mode = params[:mode].split("/")[-1]
+    file_name = "mode-" + mode + ".js"
+    Rails.application
+  end
+
   private
 
   def snippet_params

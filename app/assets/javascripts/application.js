@@ -17,6 +17,9 @@
 //= require bootstrap-sprockets
 //= require jquery-ui
 //= require ace/ace
+//= require ace/ext-modelist
 //= require ace/mode-ruby
+//= require ace/mode-c_cpp
+//= require ace/mode-javascript
 //= require ace/theme-chrome
 //= require ace/keybinding-vim
