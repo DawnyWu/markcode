@@ -11,6 +11,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
+    binding.pry
     snippet = current_user.snippets.create(snippet_params)
     redirect_to snippet_path(snippet)
   end
@@ -43,17 +44,10 @@ class SnippetsController < ApplicationController
     redirect_to snippets_path
   end
 
-  def mode
-    binding.pry
-    mode = params[:mode].split("/")[-1]
-    file_name = "mode-" + mode + ".js"
-    Rails.application
-  end
-
   private
 
   def snippet_params
-    params.require(:snippet).permit(:content, :description, :name)
+    params.require(:snippet).permit(:content, :description, :name, :type)
   end
 
   def find_snippet
