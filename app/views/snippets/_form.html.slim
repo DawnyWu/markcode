@@ -7,7 +7,7 @@
             = f.text_field :description, placeholder: "Description", class: 'form-control snippet-file-description'
           .file-name-title
             = f.text_field :name , placeholder: "Filename including extention ", class: 'form-control snippet-file-name'
-            span.render_file Will rendered as Text.
+            span.render_file Will rendered as TEXT.
             = f.hidden_field :type, value: @snippet.type, class: 'snippet-file-type'
           .file-content.code
             pre#editor= @snippet.content

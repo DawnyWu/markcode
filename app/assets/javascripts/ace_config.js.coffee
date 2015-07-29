@@ -1,5 +1,4 @@
 $(document).on 'ready', ->
-  editor = ace.edit("editor")
   $render_file = $('.render_file')
   mode_name = "text"
   $(document).on 'input', '#snippet_name', ->

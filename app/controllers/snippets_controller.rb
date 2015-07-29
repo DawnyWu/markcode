@@ -3,7 +3,7 @@ class SnippetsController < ApplicationController
   before_action :find_snippet, only: [:show, :edit, :update, :raw, :destroy]
 
 	def index
-	  @snippets = current_user.snippets
+	  @snippets = current_user.snippets.page params[:page]
 	end
 
   def new
