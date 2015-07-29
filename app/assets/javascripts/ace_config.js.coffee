@@ -22,5 +22,5 @@ $(document).on 'ready', ->
   document.getElementById('editor').style.fontSize='20px !important'
   editor.setReadOnly(false);
   $(".snippet-form-holder form").submit ->
-    $(".snippet-file-type").val(mode_name)
+    $(".snippet-file-language").val(mode_name)
     $(".snippet-file-content").val(editor.getValue())

@@ -11,7 +11,6 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    binding.pry
     snippet = current_user.snippets.create(snippet_params)
     redirect_to snippet_path(snippet)
   end
@@ -47,7 +46,7 @@ class SnippetsController < ApplicationController
   private
 
   def snippet_params
-    params.require(:snippet).permit(:content, :description, :name, :type)
+    params.require(:snippet).permit(:content, :description, :name, :language)
   end
 
   def find_snippet
