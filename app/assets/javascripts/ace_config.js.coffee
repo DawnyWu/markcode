@@ -39,6 +39,11 @@ $(document).on 'ready', ->
 
   document.getElementById('editor').style.fontSize='20px !important'
   editor.setReadOnly(false);
+
+  window.onbeforeunload = (e)->
+    if editor.getValue()
+      "Your changes will be lost."
+
   $(".snippet-form-holder form").submit ->
     $(".snippet-file-language").val(mode_name)
     $(".snippet-file-content").val(editor.getValue())
