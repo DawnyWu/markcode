@@ -17,15 +17,28 @@
 @import "font-awesome";
 @import "snippet";
 
-label {
-  margin-left: 9px;
+.file-name-title {
+  label {
+    margin-left: 9px;
+  }
+  select {
+    margin-left: 2px;
+  }
+  input {
+    margin-left: 2px;
+  }
+  .indent_size {
+    width: 50px;
+  }
+  .ace-config {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    z-index: 9999;
+  }
 }
-.ace-config {
-  position: absolute;
-  top: 8px;
-  right: 14px;
-  z-index: 9999;
-}
+
+
 
 #q {
   width: 320px;

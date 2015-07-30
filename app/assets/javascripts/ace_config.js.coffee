@@ -1,13 +1,19 @@
 $(document).on 'ready', ->
   $render_file = $('.render_file')
   mode_name = "text"
+
+  $(document).on 'change', '#indent_size', (e) ->
+    editor.getSession().setTabSize(e.target.value)
+
   $(document).on 'click', '#vim_mode', ->
+    $("#emacs_mode").prop("checked", false);
     if this.checked
       editor.setKeyboardHandler("ace/keyboard/vim")
     else
       editor.setKeyboardHandler("")
 
   $(document).on 'click', '#emacs_mode', ->
+    $("#vim_mode").prop("checked", false);
     if this.checked
       editor.setKeyboardHandler("ace/keyboard/emacs")
     else

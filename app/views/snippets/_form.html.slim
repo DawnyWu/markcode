@@ -10,6 +10,8 @@
             span.render_file Will rendered as #{(@snippet.language || "TEXT")}.
             = f.hidden_field :language, value: @snippet.language, class: 'snippet-file-language'
             .ace-config.pull-right
+              label Indent size
+              = select_tag "indent_size", "<option value='2'>2</option><option value='4'>4</option><option value='8'>8</option>".html_safe
               label.vim_mode for='vim_mode'  Vim
               = check_box_tag 'vim_mode'
               label.emacs_mode for='emacs_mode' Emacs
