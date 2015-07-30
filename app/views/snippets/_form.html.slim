@@ -9,6 +9,11 @@
             = f.text_field :name , placeholder: "Filename including extention ", class: 'form-control snippet-file-name'
             span.render_file Will rendered as #{(@snippet.language || "TEXT")}.
             = f.hidden_field :language, value: @snippet.language, class: 'snippet-file-language'
+            .ace-config.pull-right
+              label.vim_mode for='vim_mode'  Vim
+              = check_box_tag 'vim_mode'
+              label.emacs_mode for='emacs_mode' Emacs
+              = check_box_tag 'emacs_mode'
           .file-content.code
             pre#editor= @snippet.content
             = f.hidden_field :content, class: 'snippet-file-content'
