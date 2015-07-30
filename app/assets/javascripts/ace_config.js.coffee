@@ -26,6 +26,7 @@ $(document).on 'ready', ->
   editor.setTheme("ace/theme/chrome")
   editor.getSession().setMode('ace/mode/text')
   editor.resize()
+  ace.config.set("basePath", "/ace");
   editor.autoIndent = true
   editor.setHighlightActiveLine(true)
   editor.getSession().setTabSize(2)
