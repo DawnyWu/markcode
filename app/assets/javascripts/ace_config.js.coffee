@@ -4,11 +4,13 @@ $(document).on 'ready', ->
 
   $(document).on 'change', '#indent_size', (e) ->
     editor.getSession().setTabSize(e.target.value)
+    editor.focus()
 
   $(document).on 'click', '#vim_mode', ->
     $("#emacs_mode").prop("checked", false);
     if this.checked
       editor.setKeyboardHandler("ace/keyboard/vim")
+      editor.focus()
     else
       editor.setKeyboardHandler("")
 
@@ -16,6 +18,7 @@ $(document).on 'ready', ->
     $("#vim_mode").prop("checked", false);
     if this.checked
       editor.setKeyboardHandler("ace/keyboard/emacs")
+      editor.focus()
     else
       editor.setKeyboardHandler("")
 
