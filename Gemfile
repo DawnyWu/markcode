@@ -24,6 +24,7 @@ gem 'haml'
 gem 'rugments', "~> 1.0.0.beta8"
 gem 'octokit', "~> 3.0"
 gem 'sidekiq'
+gem 'sinatra', '1.4.6', :require => nil
 
 group :development, :test do
   gem 'byebug'

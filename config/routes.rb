@@ -1,4 +1,6 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
 
   get 'search' => 'search#search', as: :search
 
@@ -7,6 +9,10 @@ Rails.application.routes.draw do
   resources :snippets do
     member do
       get 'raw'
+    end
+
+    collection do
+      get 'import'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
