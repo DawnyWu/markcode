@@ -45,6 +45,7 @@ class SnippetsController < ApplicationController
 
   def import
     ImportGistsWorker.perform_async(session[:github_access_token], current_user.id)
+    redirect_to snippets_path
   end
 
   private
