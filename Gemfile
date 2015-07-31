@@ -21,8 +21,9 @@ gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
-gem "rugments", "~> 1.0.0.beta8"
-gem "octokit", "~> 3.0"
+gem 'rugments', "~> 1.0.0.beta8"
+gem 'octokit', "~> 3.0"
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug'
