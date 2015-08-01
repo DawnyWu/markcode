@@ -7,7 +7,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'slim'
 gem 'pry'
 gem 'kaminari'
-gem 'mysql2'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
@@ -44,6 +43,7 @@ group :development do
 end
 
 group :production do
+  gem "pg"
   gem 'unicron'
   gem 'unicorn-worker-killer'
   gem 'newrelic_rpm'
