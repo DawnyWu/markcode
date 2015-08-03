@@ -44,9 +44,11 @@ $(document).on 'ready', ->
   editor.setReadOnly(false);
 
   window.onbeforeunload = (e)->
-    if editor.getValue()
+    if editor.getValue() and not submit
       "Your changes will be lost."
 
+  submit = null
   $(".snippet-form-holder form").submit ->
+    submit = true
     $(".snippet-file-language").val(mode_name)
     $(".snippet-file-content").val(editor.getValue())
